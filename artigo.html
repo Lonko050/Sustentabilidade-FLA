@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arabê: o Menino que Virou Rio - EEEP Francisco Lima de Aguiar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="imagens/logo.ico">
+  <style>
+    /* Base herdada da homepage */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #0e5211;
+            --primary-dark: #1b5e20;
+            --primary-light: #2a7a2a;
+            --accent: #e09d0b;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Eliminar gap entre header e slider */
+        header {
+            position: relative;
+            margin-bottom: 0;
+            z-index: 1000;
+        }
+
+        .slider {
+            margin-top: 0;
+        }
+
+        /* Justificar textos das seções de conteúdo */
+        section .container,
+        section .container *:not(button):not(input):not(.section-title):not(.section-title *):not(.impact-stat):not(.impact-stat *):not(.step-number):not(.journey-steps):not(.journey-step):not(.journey):not(.journey-step) {
+            text-align: justify;
+        }
+
+        .journey-step, 
+        .journey-step p {
+            text-align: left !important;
+        }
+
+        /* Manter títulos centralizados */
+        .section-title,
+        .section-title * {
+            text-align: center !important;
+        }
+
+        /* Manter estatísticas centralizadas */
+        .impact-stat,
+        .impact-stat * {
+            text-align: center !important;
+        }
+
+        /* Cabeçalho */
+        header {
+            width: 100%;
+            font-family: "Poppins", sans-serif;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Header top */
+        .header-top {
+            background-color: var(--primary);
+            padding: 10px 0;
+        }
+
+        .container-header {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            z-index: 1000;
+        }
+
+        /* Logo e nome - CORREÇÃO APLICADA AQUI */
+        .logo-area {
+            display: flex;
+            align-items: center; /* alinha verticalmente */
+            gap: 10px; /* espaço entre a logo e os textos */
+            }
+
+            .logo {
+            width: 60px;
+            height: auto;
+            }
+
+            .school-name {
+            display: flex;
+            flex-direction: column; /* empilha os dois textos */
+            line-height: 1.2; /* deixa mais juntinho */
+            }
+
+            .school-name h2 {
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 700;
+            margin: 0;
+            }
+
+            .school-name h1 {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+            }
+            
+        /* Barra de pesquisa */
+        .search-area {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            justify-content: center;
+            margin-left: -60px;
+        }
+
+        .search-input {
+            width: 60%;
+            min-width: 180px;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-light);
+        }
+
+        .search-btn {
+            padding: 8px 12px;
+            border: none;
+            background: var(--primary-light);
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background: #246a24;
+        }
+
+        .search-input-logo {
+            width: 19px;
+            margin-right: -4px;
+            margin-left: -3px;
+        }
+
+        /* Header bottom */
+        .header-bottom {
+            background-color: #2a7a2a;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+    .hero-article {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5), rgba(48, 48, 48, 0.5), rgba(245, 245, 245, 0.98)), 
+                  url(imagens/arabe\ 2.jpg) center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: 180px 20px;
+    }
+
+    .hero-article h2 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .hero-article p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .article-content {
+      background-color: var(--white);
+      padding: 55px 40px;
+      border-radius: 17px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 5;
+    }
+
+    .article-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: -280px;
+  margin-bottom: 150px;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 0 0 360px;
+  position: relative;
+}
+
+/* Caixas dentro da sidebar */
+.sidebar-box {
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.sidebar-box h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+}
+
+.sidebar-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Lista de artigos relacionados */
+.related-articles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.related-articles li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+  background-color: var(--light-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.related-articles li a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.related-articles img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-right: 3px solid var(--accent);
+}
+
+.related-articles span {
+  flex: 1;
+  padding: 10px 15px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.related-articles li a:hover span {
+  color: var(--primary);
+}
+
+
+.sidebar-box ul li a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+.sidebar-box ul li a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* Redes sociais */
+.sidebar-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.sidebar-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.3rem;
+  transition: all 0.3s;
+}
+
+.sidebar-social a.insta { background: #e4405f; }
+.sidebar-social a.fb { background: #3b5998; }
+.sidebar-social a.yt { background: #ff0000; }
+
+.sidebar-social a:hover {
+  transform: translateY(-4px);
+  opacity: 0.9;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .article-layout {
+    flex-direction: column;
+    margin-right: 0;
+  }
+
+  .sidebar {
+    flex: 1;
+    width: 100%;
+  }
+
+  .article-content {
+    margin-right: 0;
+  }
+}
+
+    .article-meta {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .article-content h3 {
+      color: var(--primary);
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    .article-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .article-image {
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 30px 0;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .article-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .quote-box {
+      background-color: #e8f5e9;
+      border-left: 5px solid var(--primary);
+      padding: 20px;
+      margin: 30px 0;
+      font-style: italic;
+      border-radius: 8px;
+      color: #444;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 30px;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: var(--accent);
+    }
+
+    footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: #c8e6c9;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #c8e6c9;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-column ul li a i {
+            margin-right: 8px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .tips-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .tips-link:hover {
+            border-color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #c8e6c9;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Botão voltar ao topo */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .impact-content {
+                flex-direction: column;
+            }
+            
+            .about-image,
+            .impact-image {
+                margin-top: 40px;
+            }
+            
+            .slideshow {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 20px;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .hero {
+                padding: 120px 0;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .slideshow {
+                height: 300px;
+            }
+            
+            .slide-content {
+                padding: 20px;
+            }
+            
+            .slide-content h3 {
+                font-size: 1.5rem;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+            
+            .slideshow-nav button {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .project-card,
+            .impact-stat {
+                padding: 20px;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+            
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+            
+            .slideshow {
+                height: 250px;
+            }
+        }
+  </style>
+</head>
+<body>
+  <header id="inicio">
+        <!-- Top section -->
+        <div class="header-top">
+            <div class="container-header">
+                <div class="logo-area">
+                    <img src="imagens/logo verde.png" alt="Logo do site" class="logo">
+                    <div class="school-name">
+                        <h2>Escola Estadual de Educação Profissional</h2>
+                        <h1>Francisco Lima de Aguiar</h1>
+                    </div>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">      
+                </button>
+                <div class="search-area">
+                    <input type="text" placeholder="Buscar..." class="search-input">
+                    <button class="search-btn">
+                        <img src="imagens/pesquisa.png" alt="🔍" class="search-input-logo">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom section -->
+        <div class="header-bottom">
+            <nav class="container nav-bar">
+                <a href="sustentabilidade.html">Início</a>
+                <a href="sustentabilidade.html#sobre">Sobre</a>
+                <a href="sustentabilidade.html#projetos">Projetos</a>
+                <a href="sustentabilidade.html#impacto">Impacto Ambiental</a>
+                <a href="sustentabilidade.html#jornada">Jornada</a>
+                <a href="sustentabilidade.html#footer">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+  <section class="hero-article">
+    <h2></h2>
+    <p></p>
+  </section>
+
+  <div class="container">
+  <div class="article-layout">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <article class="article-content">
+      <h1>Arabê: o Menino que Virou Rio</h1>
+      <p>Como a degradação ambiental está ameaçando um dos mais importantes cursos d'água da região e o que podemos fazer para reverter este cenário.</p>
+      <br>
+      <div class="article-meta">
+        <i class="fas fa-calendar-alt"></i> 28 de outubro de 2025 · 
+        <i class="fas fa-user"></i> Arthur Santos Marques
+      </div>
+
+      <p>O Rio Arabê, cujo nome tem origem indígena , é um dos mais importantes cursos d'água da nossa região. Com aproximadamente 120 km de extensão, ele nasce na serra e deságua no rio principal da bacia, formando um ecossistema rico em biodiversidade e fundamental para as comunidades que vivem em suas margens.</p>
+
+      <div class="article-image">
+        <img src="imagens/foto 5 arabe.jpg" alt="Rio Arabê em seu curso natural">
+      </div>
+
+      <h3>A Importância Ecológica do Rio Arabê</h3>
+      <p>O Rio Arabê não é apenas um curso d'água; é um ecossistema complexo que sustenta uma rica biodiversidade. Suas águas abrigam diversas espécies de peixes, muitas delas endêmicas, além de servir como habitat para aves migratórias e mamíferos que dependem de seu curso para sobreviver.</p>
+
+      <div class="quote-box">
+        "Um rio não é apenas água correndo. É a veia da terra, a memória viva de um povo, o espelho da nossa consciência ambiental."  
+        <br>— <strong>Chico Mendes (Seringueiro e ambientalista brasileiro)</strong>
+      </div>
+
+      <h3>As Principais Ameaças</h3>
+      <p>A degradação do Rio Arabê é resultado de um conjunto de fatores que atuam de forma combinada, acelerando o processo de deterioração de suas águas e ecossistemas associados.</p>
+
+      <p>Um dos problemas mais graves enfrentados pelo Arabê é a poluição por esgoto não tratado. Estima-se que apenas 30% do esgoto gerado nas cidades localizadas ao longo de seu curso recebe tratamento adequado antes de ser lançado no rio.</p>
+
+      <div class="article-image">
+        <img src="imagens/foto 4 arabe.jpg" alt="Problemas de poluição no Rio Arabê">
+      </div>
+
+      <h3>O Que Pode Ser Feito</h3>
+      <p>Apesar do cenário preocupante, ainda é possível reverter a situação do Rio Arabê através de ações coordenadas que envolvam poder público, setor privado e sociedade civil.</p>
+
+      <p>A ampliação do tratamento de esgoto é fundamental para reduzir a carga poluidora que chega ao rio. É necessário investir em estações de tratamento modernas e eficientes, além de expandir a rede de coleta para alcançar todas as residências e indústrias localizadas na bacia hidrográfica.</p>
+
+      <p>Programas de reflorestamento das margens do Arabê são essenciais para proteger o rio contra a erosão, filtrar poluentes e restaurar o habitat da fauna local. Essas iniciativas devem envolver tanto o poder público quanto proprietários rurais, com incentivos para a preservação.</p>
+
+      <div class="quote-box">
+       "Um rio que morre é um pedaço da nossa história que se perde. Preservá-lo é garantir que as futuras gerações conheçam a generosidade da natureza."
+      </div>
+
+      <h3>Conclusão</h3>
+      <p>O Rio Arabê é um patrimônio natural de valor inestimável, essencial para a manutenção do equilíbrio ecológico regional e para a qualidade de vida das populações que dependem de suas águas. Sua degradação representa não apenas uma perda ambiental, mas também social e econômica.</p>
+
+      <p>A recuperação do Arabê é possível, mas exige vontade política, investimentos e, principalmente, a participação ativa de toda a sociedade. O momento de agir é agora, antes que seja tarde demais.</p>
+
+      <a href="sustentabilidade.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Voltar para a Página Inicial
+      </a>
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+  <div class="sidebar-box">
+    <h3><i class="fas fa-newspaper"></i> Outros Artigos</h3>
+    <ul class="related-articles">
+      <li>
+        <a href="artigo 2.html">
+          <img src="imagens/muda 2.jpeg" alt="Horta escolar">
+          <span>Arborização Escolar: Mais Sombra, Mais Vida</span>
+        </a>
+      </li>
+      <li>
+        <a href="artigo 3.html">
+          <img src="imagens/lixo 1.jpeg" alt="Economia de água">
+          <span>Reciclagem do lixo eletrônico</span>
+        </a>
+      </li>
+    
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3><i class="fas fa-tags"></i> Palavras-chave</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px;">
+      <span style="background-color: #e8f5e9; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Rio Arabê</span>
+      <span style="background-color: #e8f5e9; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Preservação</span>
+      <span style="background-color: #e8f5e9; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Recursos Hídricos</span>
+      <span style="background-color: #e8f5e9; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Biodiversidade</span>
+    </div>
+  </div>
+
+  <div class="sidebar-box social-box">
+    <h3><i class="fas fa-share-alt"></i> Redes Sociais</h3>
+    <div class="sidebar-social">
+      <a href="https://www.instagram.com/eeepfla_/" target="_blank" class="insta"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/EeepIsaiasGoncalvesDamascenoOficial" target="_blank" class="fb"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.youtube.com/@eeepisaiasgoncalvesdamasce8635" target="_blank" class="yt"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</aside>
+  </div>
+</div>
+
+  <footer>
+        <div class="container">
+            <div class="footer-content" id="footer">
+                <div class="footer-column">
+                    <h3>EEEP Francisco Lima de Aguiar</h3>
+                    <p>Comprometida com a educação de qualidade e a formação de cidadãos conscientes e responsáveis com o meio ambiente.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/eeepfla_/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/EeepIsaiasGoncalvesDamascenoOficial" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@eeepisaiasgoncalvesdamasce8635" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="sustentabilidade.html"><i class="fas fa-chevron-right"></i> Início</a></li>
+                        <li><a href="sustentabilidade.html#sobre"><i class="fas fa-chevron-right"></i> Sobre</a></li>
+                        <li><a href="sustentabilidade.html#projetos"><i class="fas fa-chevron-right"></i> Projetos</a></li>
+                        <li><a href="sustentabilidade.html#impacto"><i class="fas fa-chevron-right"></i> Impacto Ambiental</a></li>
+                        <li><a href="sustentabilidade.html#jornada"><i class="fas fa-chevron-right"></i> Jornada</a></li>
+                        <li><a href="sustentabilidade.html#galeria"><i class="fas fa-chevron-right"></i> Galeria</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Nosso Endereço</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Loteamento Bom Jesus<br>São Benedito - Ceará<br>CEP: 62370-000</p>
+                    <p><i class="fas fa-envelope"></i> E-mail: c05_flimaaguiar@escola.ce.gov.br</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Escola Francisco Lima de Aguiar. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
